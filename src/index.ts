@@ -16,6 +16,11 @@ import { generateAccessToken, generateRefreshToken } from "./middleware/tokenMid
 
 
 const app=express()
+app.use(cors({
+  origin: '*',
+  credentials: true
+}));
+
 db.connect()
 app.use(CookieParser())
 app.use(express.json()); // ✅ Parses JSON bodies
